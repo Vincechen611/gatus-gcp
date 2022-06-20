@@ -1,0 +1,16 @@
+metrics: true
+
+storage:
+  type: memory
+
+endpoints:
+#----------- common services -----------
+  # google
+  - name: Google
+    group: compare
+    url: https://www.google.com
+    interval: 5s
+    conditions:
+    - "[STATUS] == 200"
+    - "[RESPONSE_TIME] < 500"
+    - "[CONNECTED] == true"
